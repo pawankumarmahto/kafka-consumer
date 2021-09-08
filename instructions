@@ -1,0 +1,15 @@
+To Start the Zookeeper
+D:\Software\kafka_2.13-2.8.0>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+To Start the Kafka server
+D:\Software\kafka_2.13-2.8.0>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+To Create a topic
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1   --partitions 1 --topic OBJECT_TOPIC
+
+To List the topic
+.\bin\windows\kafka-topics.bat -zookeeper localhost:2181 -list
+
+to consume the data 
+D:\Software\kafka_2.13-2.8.0>.\bin\windows\kafka-console-consumer.bat -bootstrap-server 127.0.0.1:9092 -topic OBJECT_TOPIC -from-beginning
+
